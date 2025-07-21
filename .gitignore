@@ -1,0 +1,28 @@
+# === Python ===
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.env
+.env
+.venv
+venv/
+ENV/
+env/
+*.egg-info/
+dist/
+build/
+
+# Ignore any .pem files (private keys)
+*.pem
+
+# === Terraform ===
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+
+# === OS files ===
+.DS_Store
+Thumbs.db
+

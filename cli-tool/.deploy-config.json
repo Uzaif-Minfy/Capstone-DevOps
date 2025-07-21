@@ -1,0 +1,26 @@
+{
+  "aws": {
+    "bucket": "minfy-uzaif-capstone-deployments",
+    "profile": "Uzaif",
+    "region": "ap-south-1"
+  },
+  "build": {
+    "build_command": "npm run build",
+    "install_command": "npm ci",
+    "output_dir": "dist"
+  },
+  "deployment": {
+    "auto_cleanup": true,
+    "versions_to_keep": 10
+  },
+  "project": {
+    "created_at": "2025-07-21T21:51:55.292658",
+    "current_version": "v20250721-215208",
+    "environment": "production",
+    "framework": "vite",
+    "github_url": "https://github.com/pandeyshivam-debug/recipe-finder-react",
+    "last_deployed": "2025-07-21T22:28:03.400658",
+    "name": "recipe-finder-react",
+    "project_path": "."
+  }
+}
