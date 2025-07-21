@@ -2,7 +2,7 @@ global:
   smtp_smarthost: 'smtp.gmail.com:587'
   smtp_from: 'uzaifworks@gmail.com'
   smtp_auth_username: 'uzaifworks@gmail.com'
-  smtp_auth_password: 'xtinutrzqohzqozg'
+  smtp_auth_password: '##########' # hiding purposely 
 
 route:
   receiver: 'email-alert'
