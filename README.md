@@ -173,7 +173,7 @@ Designed for cost-efficiency, this monitoring stack runs on a separate EC2 insta
 
 - **One-Command Deployment:** `deploy-tool deploy` handles cloning, building, and uploading.
 - **GitHub Integration:** Ensures deployments use latest code.
-- **Automatic Framework Detection:** Supports React, Vite, Next.js, Angular, Vue.
+- **Automatic Framework Detection:** Supports React, Vite.
 - **Integrated Monitoring:** Control EC2-based monitoring services from the CLI.
 
 ---
