@@ -173,7 +173,7 @@ Designed for cost-efficiency, this monitoring stack runs on a separate EC2 insta
 
 - **One-Command Deployment:** `deploy-tool deploy` handles cloning, building, and uploading.
 - **GitHub Integration:** Ensures deployments use latest code.
-- **Automatic Framework Detection:** Supports React, Vite, Next.js, Angular, Vue.
+- **Automatic Framework Detection:** Supports React, Vite.
 - **Integrated Monitoring:** Control EC2-based monitoring services from the CLI.
 
 ---
@@ -185,7 +185,7 @@ Designed for cost-efficiency, this monitoring stack runs on a separate EC2 insta
 #### - deploy-tool init
 Initializes a new deployment project.
 
-```bash
+```
 deploy-tool init --github-url <repository-url>
 ```
 
@@ -205,7 +205,7 @@ deploy-tool init --github-url https://github.com/Uzaif-Minfy/capstonte-testing-2
 - ####  deploy-tool deploy
 Builds and deploys the application to AWS S3.
 
-```bash
+```
 deploy-tool deploy
 ```
 
@@ -216,7 +216,7 @@ deploy-tool deploy
 
 
 **Examples:**
-```bash
+```
 deploy-tool deploy --version 1.0.0.1
 deploy-tool deploy --env staging
 ```
@@ -262,13 +262,9 @@ deploy-tool versions --list Example: deploy-tool versions --cleanup --keep 5
 - #### deploy-tool config 
 
 **Options:**
--  `add-env`    Add a new environment configuration
 -  `get`        Get a configuration value
--  `get-env`    Get current environment
--  `list-envs`  List all configured environments
 -  `reset`      Reset all configuration
 -  `set`        Set a configuration value
-- `set-env`    Set the current environment 
 -  `show`       Display current configuration
 
 
