@@ -1,0 +1,11 @@
+groups:
+- name: website-availability
+  rules:
+  - alert: WebsiteDown
+    expr: probe_success{job="auto-discovered-websites"} == 0
+    for: 1m
+    labels:
+      severity: critical
+    annotations:
+      summary: "Website down for {{ $labels.instance }}"
+      description: "The website {{ $labels.instance }} is unreachable or was deleted (probe success = 0)."

@@ -1,0 +1,57 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+rule_files:
+  - "alert_rules.yml"
+
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+          - alertmanager:9093
+
+scrape_configs:
+  # Prometheus itself
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  # Node Exporter for system metrics
+  - job_name: 'node-exporter'
+    static_configs:
+      - targets: ['node-exporter:9100']
+
+  # cAdvisor for container metrics
+  - job_name: 'cadvisor'
+    static_configs:
+      - targets: ['cadvisor:8080']
+
+  # Discovery Service Metrics
+  - job_name: 'discovery-service'
+    static_configs:
+      - targets: ['discovery-service:8082']
+    scrape_interval: 30s
+
+  # Auto-discovered S3 websites via file service discovery
+  - job_name: 'auto-discovered-websites'
+    file_sd_configs:
+      - files:
+        - '/opt/monitoring/targets/auto_discovered_websites.json'
+        refresh_interval: 30s
+    metrics_path: /probe
+    params:
+      module: [http_2xx]
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        target_label: instance
+      - target_label: __address__
+        replacement: blackbox-exporter:9115
+      - source_labels: [project]
+        target_label: project
+      - source_labels: [framework]
+        target_label: framework
+      - source_labels: [auto_discovered]
+        target_label: auto_discovered
