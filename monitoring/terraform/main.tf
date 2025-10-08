@@ -114,6 +114,13 @@ resource "aws_security_group" "minfy_capstone_monitoring_sg" {
   description = "Security group for monitoring server"
   vpc_id      = data.aws_vpc.default.id
 
+
+
+
+  # allow port for discovery service
+
+
+
   # SSH access
   ingress {
     description = "SSH"
